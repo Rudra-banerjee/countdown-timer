@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,200;1,400;1,600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-image: url("corporate-handshake.jpg");
+  background-size: cover;
+  background-position: center;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  z-index: -10;
+}
+
+.heading-cta {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.container {
+  margin-top: 3rem;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: wheat; */
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header p {
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+header span {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: gold;
+}
+
+.time-container {
+  margin: 1rem;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-ct {
+  width: 20%;
+  text-align: center;
+  background-color: gold;
+  border-radius: 0.3rem;
+  margin: 0.3rem;
+}
+
+.num {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.time-ct span {
+  font-size: 0.91rem;
+  text-transform: lowercase;
+  color: teal;
+}
+
+.time-ct:last-child .num {
+  color: tomato;
+}
+
+.quote-container {
+  margin: 0 auto;
+  margin-top: 3rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#quote-text {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+#quote-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#quote-author {
+  margin-top: 0.5rem;
+  font-weight: 800;
+  color: gold;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+#quote-author.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#new-quote {
+  margin-top: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: 2px solid gold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: background-color 200ms ease-in, border-radius 200ms ease-in,
+    color 200ms ease-in;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#new-quote:hover {
+  background-color: gold;
+  border-radius: 15px;
+  color: orangered;
+}
+
+@media (max-width: 300px) {
+  .time-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .time-ct {
+    width: 40%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    height: 200px;
+  }
+
+  .time-container {
+    width: 80%;
+    align-self: center;
+  }
+  .time-ct {
+    width: 15%;
+    margin: 0 0.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 800px;
+  }
+}
